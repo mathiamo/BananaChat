@@ -1,0 +1,63 @@
+﻿<html>
+<head>
+    <title>Ciberchat</title>
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+    <div id='main'>
+        <article></article>
+        <aside class="left">
+            <div id="topBar-admin">
+                <div class="icon-wrapper">
+                    <span class="glyphicon glyphicon-user chat-icon" aria-hidden="true"></span>
+                    <span class="chat-header-text">Chat-forespørsler</span>
+                </div>
+            </div>
+            <div class="chat-content">
+                <p>Velg en forespørsel fra listen under for å begynne å chatte med en kunde</p>
+                <div class="list-group">
+                    <a href="#" class="list-group-item">Kunde 1</a>
+                    <a href="#" class="list-group-item">Kunde 2</a>
+                    <a href="#" class="list-group-item">Kunde 3</a>
+                    <a href="#" class="list-group-item">Kunde 4</a>
+                    <a href="#" class="list-group-item">Kunde 5</a>
+                </div>
+            </div>
+        </aside>
+        <aside class="right">
+
+            <div id="topBar-customer">
+                <div class="icon-wrapper">
+                    <span class="glyphicon glyphicon-user chat-icon" aria-hidden="true"></span>
+                    <span class="chat-header-text">Chat med support</span>
+                    <button type="button" class="btn btn-default">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </button>
+                    <button type="button" class="btn btn-default">
+                        <span class="glyphicon glyphicon-resize-small"></span>
+                    </button>
+                </div>
+            </div>
+            <div class="chat-content">
+                <p>Hei der! Vi vil straks hjelpe deg.</p>
+                <p>Hva heter du?</p>
+                <div class="form-group">
+                    <label for="kunde">Navn:</label>
+                    <input type="text" class="form-control" placeholder="Skriv inn navnet ditt her" id="kunde">
+                </div>
+                <button d class="btn btn-success chat-button">Start Chat</button>
+             
+            </div>
+        </aside>
+    </div>
+    <footer>
+        <div class="open-chat"><button id="hidechat"><img src="../images/chat-start-icon.png" /></button> </div>
+        <div class="open-admin"><button id="hideadmin"><img src="../images/chat-admin-icon.png" /></button> </div>
+    </footer>
+</body>
+</html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min.js" integrity="sha256-Q+Ie6B2Arcz1S11XbaKuTKy1lSggFM+JsPFU9MO3qpU=" crossorigin="anonymous"></script>
+<script type='text/javascript' src="../js/chat.js"></script>

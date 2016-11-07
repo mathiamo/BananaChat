@@ -1,0 +1,88 @@
+﻿body{
+    background: url(../images/bakgrunnsbilde-banankassen.png) no-repeat;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 2500px;
+}
+#main {   
+    min-height:800px;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-flow: row;
+}
+    #main > .left {
+        border: 1px solid #5BA12F;
+        margin-top:146px;
+        flex-grow:1;
+        max-width: 400px;
+        order: 1;
+        background-color:white;
+        display:none;
+    }
+
+     #main > article {
+        flex-grow:3;
+        order: 2;
+    }
+
+    #main > .right {
+        border: 1px solid #5BA12F;
+        margin-top:146px;
+        max-width: 400px;
+        flex-grow:1;
+        order: 3;        
+        background-color:white;
+        display:none;
+    }
+    #hideadmin{
+        background-color:#F4AD1D;
+        border:none;
+    }
+    #hidechat{
+        background-color:#5BA12F;
+        border:none;
+        float:right;
+        padding:7px;       
+    }
+.chat-icon {
+    color: white;
+    padding: 5px;
+}
+
+.chat-header-text {
+    color: white;
+}
+
+.chat-content {
+    padding: 20px;
+}
+
+.chat-button {
+    float: right;
+}
+
+#topBar-customer {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 30px;
+    background-color: #5BA12F;
+}
+
+#topBar-admin {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 30px;
+    background-color: #F4AD1D;
+}
+
+.icon-wrapper > .btn {
+    float: right;
+    background-color: #5BA12F;
+    border: none;
+    color: white;
+    vertical-align: central;
+}
