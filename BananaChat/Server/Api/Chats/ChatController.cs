@@ -34,6 +34,7 @@ namespace Server.Api.Chats
         }
 
         [Route("new-messages")]
+        [NoCache]
         public async Task<ChatMessage[]> GetNewChatMessages(string chatId, int skip = 0)
         {
             try
@@ -48,6 +49,7 @@ namespace Server.Api.Chats
         }
 
         [Route("all-messages")]
+        [NoCache]
         public async Task<ChatMessage[]> GetAllChatMessages(string chatId)
         {
             try
@@ -69,6 +71,7 @@ namespace Server.Api.Chats
         }
 
         [Route("list")]
+        [NoCache]
         public async Task<ChatSummary[]> GetChatList()
         {
             try

@@ -1,7 +1,8 @@
 using Akka;
 using Akka.Actor;
+using Server.Chats.Queries;
 
-namespace Server.Chats.Queries
+namespace Server.Routing
 {
     internal class QueryRouter : UntypedActor
     {

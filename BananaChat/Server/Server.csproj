@@ -100,6 +100,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <None Include="Properties\PublishProfiles\abakus-bananachat - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -113,6 +114,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Api\Chats\Models\ChatMessage.cs" />
+    <Compile Include="Api\Chats\NoCacheAttribute.cs" />
     <Compile Include="Chats\Chat.cs" />
     <Compile Include="Chats\ChatContext.cs" />
     <Compile Include="Api\Chats\ChatController.cs" />
@@ -129,7 +131,7 @@
     <Compile Include="Chats\Queries\IChatQuery.cs" />
     <Compile Include="Chats\Queries\IQuery.cs" />
     <Compile Include="Routing\QueryRouter.cs" />
-    <Compile Include="MessagesReady.cs" />
+    <Compile Include="Api\Chats\MessagesReady.cs" />
     <Compile Include="Chats\Data\ChatRoom.cs" />
     <Compile Include="Api\Chats\Models\ChatSummary.cs" />
     <Compile Include="Api\Chats\Models\CloseChat.cs" />
@@ -141,7 +143,7 @@
     </Compile>
     <Compile Include="Api\Chats\Models\JoinChat.cs" />
     <Compile Include="Api\Chats\Models\Message.cs" />
-    <Compile Include="MessageConversions.cs" />
+    <Compile Include="Api\Chats\MessageConversions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Api\Chats\Models\StartChat.cs" />
     <Compile Include="Api\Chats\Models\StartMessage.cs" />
