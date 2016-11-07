@@ -1,16 +1,14 @@
-﻿.inactive {
-    background-color: transparent;
-}
-.help-button{
-    float:right;
-}
-.customer-aside{
+﻿.customer-aside{
     position:absolute;
-    right:0;
-    top:146px;
-    height:600px;
+    right:0;   
+    height:100%;
     width:400px;
     background-color:white;   
+}
+div > .customer-button{
+    margin-top:146px;
+    float:right;
+    border-radius:30px;
 }
 .message-pane{
     position: absolute;
@@ -25,7 +23,9 @@
     left:6px;
     right:6px;
 }
-
+.inactive {
+    background-color: transparent;
+}
 .inner-help-button{
     float:right;
     margin-top:5px;
@@ -34,7 +34,7 @@
     margin: 0;
     padding: 0;
     width: 100%;
-    height: 33px;
+    padding:7px;
     background-color: #5BA12F;
 }
 .icon-wrapper-customer > .btn {
