@@ -2,7 +2,7 @@ using System.Net.Http.Formatting;
 using Newtonsoft.Json;
 using Server.Api.Chats.Models;
 
-namespace Server
+namespace Server.Api.Chats
 {
     static class MessageConversions
     {

@@ -78,7 +78,6 @@
     <Content Include="images\chat-start-icon.png" />
     <Content Include="Index.html" />
     <Content Include="js\supportSide.js" />
-    <Content Include="Support.html" />
     <Content Include="js\backend.js" />
     <Content Include="js\knockout-3.4.3.js" />
     <Content Include="packages.config" />
@@ -90,7 +89,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Customer.html" />
     <Content Include="js\jsonp.js" />
     <Content Include="js\customerSide.js" />
     <Content Include="Web.config" />

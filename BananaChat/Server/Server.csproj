@@ -129,7 +129,7 @@
     <Compile Include="Chats\Queries\IChatQuery.cs" />
     <Compile Include="Chats\Queries\IQuery.cs" />
     <Compile Include="Routing\QueryRouter.cs" />
-    <Compile Include="MessagesReady.cs" />
+    <Compile Include="Api\Chats\MessagesReady.cs" />
     <Compile Include="Chats\Data\ChatRoom.cs" />
     <Compile Include="Api\Chats\Models\ChatSummary.cs" />
     <Compile Include="Api\Chats\Models\CloseChat.cs" />
@@ -141,7 +141,7 @@
     </Compile>
     <Compile Include="Api\Chats\Models\JoinChat.cs" />
     <Compile Include="Api\Chats\Models\Message.cs" />
-    <Compile Include="MessageConversions.cs" />
+    <Compile Include="Api\Chats\MessageConversions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Api\Chats\Models\StartChat.cs" />
     <Compile Include="Api\Chats\Models\StartMessage.cs" />
