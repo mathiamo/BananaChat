@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Go bananas chat</title>
+    <meta charset="utf-8" />
+    <script src="js/jsonp.js"></script>
+    <script src="js/knockout-3.4.3.js"></script>
+    <script src="js/backend.js"></script>
+    <script src="js/supportSide.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/support.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+</head>
+<body>
+    <div id="chat">
+        <section data-bind="with: panes.start">
+            <div data-bind="visible: show">              
+                <button data-bind="click: showRequests" class="btn btn-warning support-button">
+                    <img src="images/chat-admin-icon.png" />
+                </button>
+            </div>
+        </section>
+
+        <section data-bind="with: panes.title">
+            <div data-bind="visible: show">
+                <div id="topBar-admin">
+                    <div class="icon-wrapper">
+                        <img src="images/chat-admin-icon.png" />
+                        <span class="chat-header-text">Chat-forespørsler</span>
+                        <button data-bind="click: closeChat" type="button" class="btn btn-default">
+                            <img src="images/chat-close-icon.png" />
+                        </button>
+                    </div>
+                </div>               
+            </div>
+        </section>
+
+        <section data-bind="with: panes.requests" class="chat-content">
+            <div data-bind="visible: show" >
+                <p>
+                   Velg en forespørsel fra listen under for å begynne å chatte med en kunde.
+                </p>
+                <ul data-bind="foreach: chats" class="customer-chatlist">
+                    <li data-bind="click: $parent.joinChat, event: { mouseover: enable, mouseout: disable}" class="list-group-item">
+                        <span data-bind="text: customerName"></span>
+                        <span data-bind="visible: notSelectable, text: waited" class="pull-right"></span>
+                        <span data-bind="visible: selectable" class="btn btn-warning pull-right take-chat-button">Ta chat</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section data-bind="with: panes.messages" class="chat-content">
+
+            <div data-bind="visible: show">
+                <form data-bind="submit: sendMessage">
+                    <p>
+                        Du har nå ansvaret for chatten med <span data-bind="text: customerName"></span>.
+                    </p>
+
+                    <div data-bind="foreach: messages">
+                        <div data-bind="css: {right: isCustomer, left: isSupport}, text: text"></div>
+                    </div>
+
+                    <input type="text" placeholder="Skriv her..." data-bind="value: message, hasFocus: focus" class="form-control"/>
+                </form>
+            </div>
+
+        </section>
+    </div>
+
+    <iframe name="trashcan" width="0" height="0" border="0" style="display: none;"></iframe>
+
+    <script>
+        var server = new Server("http://localhost:65288/api/chat/", "trashcan");
+        var supportSession = new ChatSession(server);
+        var supportChat = new SupportSide(supportSession);
+        ko.applyBindings(supportChat, document.getElementById("chat"));
+    </script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Banankassen</title>
+    <meta charset="utf-8" />
+    <script src="js/jsonp.js"></script>
+    <script src="js/knockout-3.4.3.js"></script>
+    <script src="js/backend.js"></script>
+    <script src="js/supportSide.js"></script>
+    <script src="js/customerSide.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/customer.css">
+    <link rel="stylesheet" type="text/css" href="css/support.css">
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+    <aside data-bind="css: { inactive: inactive}" id="customer-chat" class="customer-aside">
+
+        <section data-bind="with: panes.help">
+            <div data-bind="visible: show">
+                <button data-bind="click: prepareChat" class="help-button btn btn-success">
+                    <img src="images/chat-start-icon.png" />
+                </button>
+            </div>
+        </section>
+
+        <section data-bind="with: panes.title">
+            <div data-bind="visible: show">
+                <div id="topBar-customer">
+                    <div class="icon-wrapper-customer">
+                        <img src="images/chat-start-icon.png" />
+                        <span class="chat-header-text">Chat med support</span>
+                        <button data-bind="click: closeChat" type="button" class="btn btn-default">
+                            <img src="images/chat-close-icon.png" />
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section data-bind="with: panes.prepare">
+            <form data-bind="submit: startChat, visible: show" class="chat-content">
+                <p>
+                    Hei der! Vi vil straks hjelpe deg
+                </p>
+                <label>Hva heter du?</label>
+                <input type="text" name="name" placeholder="Skriv navnet ditt her" data-bind="value: name, hasFocus: focus" class="form-control" />
+                <input class="btn btn-success inner-help-button" type="submit" value="Start chat" />
+            </form>
+        </section>
+
+        <section data-bind="with: panes.messages">
+
+            <div data-bind="visible: show" class="chat-content">
+                <form data-bind="submit: sendMessage">
+                    <p>
+                        Takk, <span data-bind="text: name"></span>! En kundebehandler vil
+                        kontakte deg hvert øyeblikk. Du kan
+                        begynne å stille et spørsmål ved å skrive i
+                        feltet under.
+                    </p>
+
+                    <div class="message-pane">
+                        <div data-bind="foreach: messages">
+                            <div data-bind="css: {right: isCustomer, left: isSupport}, text: text"></div>
+                        </div>
+                        <div id="customer-marker"></div>
+                    </div>
+
+                    <div class="message">
+                        <input type="text" id="message" placeholder="Skriv her..." data-bind="value: message, hasFocus: focus" class="form-control" />
+                    </div>
+                </form>
+            </div>
+
+        </section>
+    </aside>
+    <script>
+        var customerSession = new ChatSession();
+        var customerChat = new CustomerSide(customerSession);
+
+        ko.applyBindings(customerChat, document.getElementById("customer-chat"));
+    </script>
+    <iframe name="trashcan" width="0" height="0" border="0" style="display: none;"></iframe>
+</body>
+
+</html>
